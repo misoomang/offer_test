@@ -10,7 +10,7 @@ def MergeElem(data, start, mid, end, temp):  # data[start...mid], data[mid+1...e
     i = start
     j = mid + 1
     k = start
-    while i <= mid and j <= end:
+    while i <= mid and j <= end:            # 合并(治)
         if data[j] < data[i]:  # data[start...i...mid] data[mid+1...j...end]
             temp[k] = data[j]
             cnt += j - k
@@ -21,7 +21,7 @@ def MergeElem(data, start, mid, end, temp):  # data[start...mid], data[mid+1...e
             i += 1
             k += 1
 
-    while i <= mid:
+    while i <= mid:         # 合并(治)
         temp[k] = data[i]
         i += 1
         k += 1
@@ -37,8 +37,8 @@ def InverseCore(data, start, end, temp):
     cnt = 0
     if start < end:
         mid = (start + end) // 2
-        cnt += InverseCore(data, start, mid, temp)
-        cnt += InverseCore(data, mid+1, end, temp)
+        cnt += InverseCore(data, start, mid, temp)      # 分
+        cnt += InverseCore(data, mid+1, end, temp)      # 分
         cnt += MergeElem(data, start, mid, end, temp)
     return cnt
 

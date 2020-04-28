@@ -33,6 +33,7 @@ def get_ugly_number_solution_1(index):
             p3 += 1
         if ugly_list[i] == ugly_list[p5] * 5:
             p5 += 1
+        print(ugly_list, p2, p3, p5)
     return ugly_list[-1]
 
 
