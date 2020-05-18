@@ -47,8 +47,8 @@ def merge_link_list(first_link_list, second_link_list):
                 first_link_node = first_link_node.next_node
         else:
             if head is None:
-                head = first_link_node
-                first_link_node = first_link_node.next_node
+                head = second_link_node
+                second_link_node = second_link_node.next_node
             else:
                 head.next_node = second_link_node
                 head = head.next_node
@@ -63,7 +63,7 @@ def merge_link_list(first_link_list, second_link_list):
 
 if __name__ == '__main__':
     link_list_1 = Array()
-    for i in range(10, 0, -2):
+    for i in range(11, 4, -2):
         link_list_1.add(i)
 
     array_list = []
